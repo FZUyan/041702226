@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding:utf-8 -*-
-
 import re
 import cpca
 import json
@@ -128,6 +125,12 @@ def difficulty_2(str0:str):
         hao = re.search(r"\d*号",addr1).group(0)
         addr1 = addr1.split("号")[1]
 
+    if re.search(r"\d*弄", addr1) is None:
+        nong = None
+    else:
+        nong= re.search(r"\d*弄", addr1).group(0)
+        addr1 = addr1.split("弄")[1]
+
 
     addr = [tmp['省'],tmp['市'],tmp['区'],"","","",]
     if zhen != None:
@@ -144,6 +147,8 @@ def difficulty_2(str0:str):
         addr[4] += jie
     if hao != None:
         addr[5] += hao
+    if nong != None:
+        addr[5] += nong
 
 
     addr.append(addr1)
