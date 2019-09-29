@@ -15,7 +15,7 @@ def split_num(s:str):#将电话号码从字符串提取出来
     addr = match[0]+match[1]#将电话号码提取出来后，连接两个被分开的字符串
     return (phone, addr)
 
-def solve_5(str0:str):
+def difficulty_1(str0:str):
     #str0 = input()
     #print(str0)
     if str0[-1] == ".":
@@ -85,7 +85,7 @@ def solve_5(str0:str):
     print(info_data)
     #print(json.loads(info_data))#打印结果
 
-def solve_7(str0:str):
+def difficulty_2(str0:str):
     #str0 = input()
     #print(str0)
     if str0[-1] == ".":
@@ -164,10 +164,10 @@ while(1):
         level = int(level)
         str0 = str0.split("!")[1]
         if level == 1:
-            solve_5(str0)
+            difficulty_1(str0)
         if level == 2:
-            solve_7(str0)
+            difficulty_2(str0)
         if level == 3:
-            solve_7(str0)
+            difficulty_2(str0)
     else:
         break
