@@ -7,8 +7,8 @@ def split_name(s:str):#将名字从字符串中提取出来
     return match
 
 def split_num(s:str):#将电话号码从字符串提取出来
-    phone = re.search(r'1\d{10}',s).group(0)
-    match = re.split(r'1\d{10}',s)
+    phone = re.search(r'1\d{10}',s).group(0)#re.search 扫描整个字符串并返回第一个成功的匹配
+    match = re.split(r'1\d{10}',s)#re.split 方法按照能够匹配的子串将字符串分割后返回列表
     addr = match[0]+match[1]#将电话号码提取出来后，连接两个被分开的字符串
     return (phone, addr)
 
